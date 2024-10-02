@@ -4,24 +4,23 @@ import { HeaderBar, Links, Cart, Title, TitleContainer } from './styles'
 
 const Header = () => (
   <HeaderBar style={{ backgroundImage: `url(${background})` }}>
-    <nav>
-      <Links>
-        <li>
-          <a href="#">Restaurantes</a>
-        </li>
-        <li>
-          <a href="#">
-            <img src={logo} alt="logo" />
-          </a>
-        </li>
-      </Links>
-      <Cart href="#">0 - produto(s) no carrinho</Cart>
-    </nav>
+    <Links>
+      <div>
+        <a href="#">Restaurantes</a>
+      </div>
+      <div>
+        <a href="#">
+          <img src={logo} alt="logo" />
+        </a>
+      </div>
+      <div>
+        <Cart href="#">0 - produto(s) no carrinho</Cart>
+      </div>
+    </Links>
 
-    <TitleContainer></TitleContainer>
-    <Title>
-      Viva experiências gastronômicas <br /> no conforto da sua casa
-    </Title>
+    <TitleContainer>
+      <Title>Viva experiências gastronômicas no conforto da sua casa</Title>
+    </TitleContainer>
   </HeaderBar>
 )
 

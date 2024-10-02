@@ -24,24 +24,23 @@ export const HeaderBar = styled.header`
   }
 `
 
-export const Links = styled.ul`
+export const Links = styled.div`
   display: flex;
   align-items: center;
-  column-gap: 480px;
-  margin-left: 171px;
+  justify-content: space-evenly;
+  padding-top: 64px;
 `
 
-export const Cart = styled.a`
-  margin-right: 171px;
-`
+export const Cart = styled.a``
 
 export const TitleContainer = styled.div`
-  width: 544px;
+  width: 100%;
   display: flex;
   justify-content: center;
 `
 
 export const Title = styled.h1`
+  width: 544px;
   text-align: center;
   font-size: 36px;
   font-weight: 800;
