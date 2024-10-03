@@ -4,6 +4,7 @@ import { colors } from '../../styles'
 export const HeaderBar = styled.header`
   widht: 100%;
   height: 384px;
+  margin-bottom: 80px;
 
   nav {
     display: flex;

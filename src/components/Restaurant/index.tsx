@@ -1,30 +1,47 @@
-import star from '../../assets/images/estrela.png'
+import { Link } from 'react-router-dom'
 import Button from '../Button'
+import Tag from '../Tag'
+import { Title, Description, CardItens, Card, Infos } from './styles'
 
-// type Props = {
-//   image: string
-//   name: string
-//   assessment: number
-//   assessmentimg: string
-//   description: string
-// }
+type Props = {
+  image: string
+  name: string
+  assessment: string
+  assessmentimg?: string
+  description: string
+  infos: string[]
+}
 
-const Restaurant = () => (
-  <div>
-    <img src="/placehold.it/472x217" alt="food" />
-    <div>
-      <h3>Hioki Sushi</h3>
-      <p>4.6</p>
-      <img src={star} alt="star" />
-    </div>
-    <p>
-      Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis
-      frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega
-      rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão
-      sem sair do lar com nosso delivery!
-    </p>
-    <Button />
-  </div>
+const Restaurant = ({
+  assessment,
+  description,
+  image,
+  infos,
+  name,
+  assessmentimg
+}: Props) => (
+  <Card>
+    <Infos>
+      {infos.map((info) => (
+        <Tag key={info}>{info}</Tag>
+      ))}
+    </Infos>
+    <img src={image} alt="food" />
+    <CardItens>
+      <Title>
+        <h3>{name}</h3>
+        <div>
+          <h3>{assessment}</h3>
+          <img src={assessmentimg} alt="star" />
+        </div>
+      </Title>
+
+      <Description>{description}</Description>
+      <Link to={'/perfil'}>
+        <Button size="small">Saiba mais</Button>
+      </Link>
+    </CardItens>
+  </Card>
 )
 
 export default Restaurant
